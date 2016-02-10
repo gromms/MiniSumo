@@ -6183,7 +6183,6 @@ W = angled&lt;p&gt;
 <part name="C2" library="SparkFun-Capacitors" deviceset="CAP" device="0603-CAP" value="1uF"/>
 <part name="C3" library="SparkFun-Capacitors" deviceset="CAP" device="0603-CAP" value="100nF"/>
 <part name="C4" library="SparkFun-Capacitors" deviceset="CAP" device="0603-CAP" value="100nF"/>
-<part name="SUPPLY1" library="SparkFun-Aesthetics" deviceset="VCC" device="" value="USB_5V"/>
 <part name="GND1" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="GND2" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="GND3" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
@@ -6239,7 +6238,6 @@ W = angled&lt;p&gt;
 <instance part="C2" gate="G$1" x="40.64" y="30.48"/>
 <instance part="C3" gate="G$1" x="22.86" y="73.66"/>
 <instance part="C4" gate="G$1" x="33.02" y="73.66"/>
-<instance part="SUPPLY1" gate="G$1" x="-10.16" y="43.18"/>
 <instance part="GND1" gate="1" x="-10.16" y="22.86"/>
 <instance part="GND2" gate="1" x="40.64" y="15.24"/>
 <instance part="GND3" gate="1" x="33.02" y="53.34" rot="R270"/>
@@ -6347,15 +6345,6 @@ W = angled&lt;p&gt;
 </segment>
 </net>
 <net name="VCC" class="0">
-<segment>
-<pinref part="F1" gate="G$1" pin="2"/>
-<pinref part="SUPPLY1" gate="G$1" pin="VCC"/>
-<wire x1="-15.24" y1="38.1" x2="-10.16" y2="38.1" width="0.1524" layer="91"/>
-<wire x1="-10.16" y1="38.1" x2="-10.16" y2="43.18" width="0.1524" layer="91"/>
-<junction x="-10.16" y="38.1"/>
-<wire x1="-10.16" y1="38.1" x2="10.16" y2="38.1" width="0.1524" layer="91"/>
-<pinref part="JP1" gate="A" pin="1"/>
-</segment>
 <segment>
 <pinref part="U1" gate="G$1" pin="UVCC"/>
 <wire x1="53.34" y1="71.12" x2="45.72" y2="71.12" width="0.1524" layer="91"/>
@@ -6804,6 +6793,13 @@ W = angled&lt;p&gt;
 <junction x="2.54" y="106.68"/>
 <pinref part="U2" gate="A" pin="B"/>
 <wire x1="-10.16" y1="109.22" x2="-7.62" y2="109.22" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$12" class="0">
+<segment>
+<pinref part="F1" gate="G$1" pin="2"/>
+<wire x1="-15.24" y1="38.1" x2="10.16" y2="38.1" width="0.1524" layer="91"/>
+<pinref part="JP1" gate="A" pin="1"/>
 </segment>
 </net>
 </nets>
