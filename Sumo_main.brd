@@ -2257,8 +2257,6 @@ design rules under a new name.</description>
 <wire x1="25.01" y1="37.08" x2="24.8226" y2="36.8926" width="0.5" layer="1"/>
 <wire x1="24.8226" y1="36.8926" x2="24.8226" y2="34.36" width="0.5" layer="1"/>
 <wire x1="24.8226" y1="34.36" x2="24.8226" y2="33.56" width="0.5" layer="1"/>
-<wire x1="5.99" y1="28.79" x2="2.84" y2="25.64" width="0.5" layer="16"/>
-<wire x1="2.84" y1="25.64" x2="2.84" y2="25.055" width="0.5" layer="16"/>
 <wire x1="7.59" y1="27.8" x2="7.7" y2="27.8" width="0.5" layer="16"/>
 <via x="7.7" y="27.8" extent="1-16" drill="0.3"/>
 <wire x1="7.7" y1="27.8" x2="7.73" y2="27.83" width="0.5" layer="1"/>
@@ -2318,7 +2316,6 @@ design rules under a new name.</description>
 <via x="21.9" y="19.6" extent="1-16" drill="0.3"/>
 <wire x1="21.9" y1="19.6" x2="21.88" y2="19.58" width="0.5" layer="1"/>
 <wire x1="21.88" y1="19.58" x2="21.88" y2="18.3" width="0.5" layer="1"/>
-<wire x1="5.99" y1="28.79" x2="6.4" y2="28.79" width="0.5" layer="16"/>
 <wire x1="6.4" y1="28.79" x2="6.71" y2="28.79" width="0.5" layer="16"/>
 <wire x1="6.71" y1="28.79" x2="7.7" y2="27.8" width="0.5" layer="16"/>
 <wire x1="6.39" y1="30" x2="6.39" y2="28.8" width="0.5" layer="16"/>
@@ -2331,6 +2328,10 @@ design rules under a new name.</description>
 <wire x1="9.3" y1="17.6" x2="9.3" y2="20.6" width="0.5" layer="1"/>
 <wire x1="9.3" y1="20.6" x2="10.86" y2="22.06" width="0.5" layer="1"/>
 <wire x1="10.86" y1="22.06" x2="10.86" y2="22.63" width="0.5" layer="1"/>
+<wire x1="2.84" y1="25.055" x2="2.84" y2="25.54" width="0.5" layer="1"/>
+<wire x1="2.84" y1="25.54" x2="5.2" y2="27.9" width="0.5" layer="1"/>
+<wire x1="5.2" y1="27.9" x2="7.6" y2="27.9" width="0.5" layer="1"/>
+<wire x1="7.6" y1="27.9" x2="7.7" y2="27.8" width="0.5" layer="1"/>
 <wire x1="6.39" y1="30" x2="5.8" y2="34.1" width="0" layer="19" extent="1-16"/>
 </signal>
 <signal name="GND">
@@ -2497,11 +2498,12 @@ design rules under a new name.</description>
 <signal name="V03">
 <contactref element="X6" pad="1"/>
 <contactref element="U3" pad="8"/>
-<wire x1="2.84" y1="27.595" x2="2.84" y2="27.14" width="0.3" layer="16"/>
-<wire x1="2.84" y1="27.14" x2="1.4" y2="25.7" width="0.3" layer="16"/>
-<wire x1="1.4" y1="25.7" x2="1.4" y2="23.1" width="0.3" layer="16"/>
-<wire x1="1.4" y1="23.1" x2="13.2662" y2="19.7338" width="0.3" layer="16"/>
-<wire x1="13.2662" y1="19.7338" x2="13.23" y2="19.1338" width="0.3" layer="16"/>
+<wire x1="2.84" y1="27.595" x2="2.84" y2="27.26" width="0.3" layer="16"/>
+<wire x1="2.84" y1="27.26" x2="4.9" y2="25.2" width="0.3" layer="16"/>
+<wire x1="4.9" y1="25.2" x2="5.5" y2="25.2" width="0.3" layer="16"/>
+<wire x1="5.5" y1="25.2" x2="10.9" y2="19.8" width="0.3" layer="16"/>
+<wire x1="10.9" y1="19.8" x2="13.23" y2="19.8" width="0.3" layer="16"/>
+<wire x1="13.23" y1="19.8" x2="13.23" y2="19.1338" width="0.3" layer="16"/>
 </signal>
 <signal name="RX">
 <contactref element="U1" pad="8"/>
@@ -2691,15 +2693,15 @@ design rules under a new name.</description>
 </signal>
 </signals>
 <errors>
-<approved hash="19,16,9f6783ec8ed79c5c"/>
 <approved hash="19,16,e26cf169fc52e157"/>
 <approved hash="19,16,951f0a880ab69521"/>
-<approved hash="19,16,35675a625d663063"/>
+<approved hash="19,16,9f6783ec8ed79c5c"/>
 <approved hash="19,16,4e6c22e725e34b68"/>
-<approved hash="19,16,f16ad5e0d8e5ee6e"/>
+<approved hash="19,16,35675a625d663063"/>
 <approved hash="19,16,9060a764aa608f65"/>
 <approved hash="19,16,756286ebeeef0b33"/>
 <approved hash="19,16,836c2b841fb90ce9"/>
+<approved hash="19,16,f16ad5e0d8e5ee6e"/>
 </errors>
 </board>
 </drawing>
