@@ -6349,8 +6349,8 @@ Source: &lt;a href="http://www.ti.com/lit/ds/symlink/tl331-q1.pdf"&gt; Data shee
 <packages>
 <package name="PHOTOTRANSISTOR">
 <description>0603 Photo transistor</description>
-<smd name="COLLECTOR" x="0" y="0" dx="0.5" dy="1" layer="1" rot="R180"/>
-<smd name="EMITTER" x="1.6" y="0" dx="0.5" dy="1" layer="1" rot="R180"/>
+<smd name="COLLECTOR" x="-0.9" y="0" dx="1" dy="1" layer="1" roundness="30" rot="R180"/>
+<smd name="EMITTER" x="0.9" y="0" dx="1" dy="1" layer="1" roundness="30" rot="R180"/>
 </package>
 </packages>
 <symbols>
@@ -6451,7 +6451,7 @@ Source: &lt;a href="http://www.ti.com/lit/ds/symlink/tl331-q1.pdf"&gt; Data shee
 <part name="GND16" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="GND17" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="GND18" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
-<part name="J2" library="Molex-47346-0001" deviceset="47346-0001" device=""/>
+<part name="J2" library="Molex-47346-0001" deviceset="47346-0001" device="" value="MICRO_USB"/>
 <part name="R3" library="Panasonic-Trimmer_Potentiometers" deviceset="EVM" device="-3W" technology="3YSX50B14" value=" 10KOHM "/>
 <part name="R6" library="resistor" deviceset="R-EU_" device="R0603" value="500R"/>
 <part name="C10" library="SparkFun-Capacitors" deviceset="CAP" device="0603-CAP" value="1uF"/>
@@ -6467,8 +6467,8 @@ Source: &lt;a href="http://www.ti.com/lit/ds/symlink/tl331-q1.pdf"&gt; Data shee
 <part name="SUPPLY14" library="SparkFun-Aesthetics" deviceset="VCC" device=""/>
 <part name="R17" library="resistor" deviceset="R-EU_" device="R0603" value="1K"/>
 <part name="R18" library="resistor" deviceset="R-EU_" device="R0603" value="1K"/>
-<part name="D3" library="SparkFun-LED" deviceset="LED" device="0603"/>
-<part name="D4" library="SparkFun-LED" deviceset="LED" device="0603"/>
+<part name="D3" library="SparkFun-LED" deviceset="LED" device="0603" value="IR LED"/>
+<part name="D4" library="SparkFun-LED" deviceset="LED" device="0603" value="IR LED"/>
 <part name="R19" library="resistor" deviceset="R-EU_" device="R0603" value="47K"/>
 <part name="R20" library="resistor" deviceset="R-EU_" device="R0603" value="47K"/>
 <part name="T1" library="Phototransistor 0603" deviceset="0603-PHOTO-TRANS" device=""/>
@@ -6733,6 +6733,7 @@ Source: &lt;a href="http://www.ti.com/lit/ds/symlink/tl331-q1.pdf"&gt; Data shee
 <pinref part="R19" gate="G$1" pin="2"/>
 <wire x1="172.72" y1="68.58" x2="167.64" y2="68.58" width="0.1524" layer="91"/>
 <pinref part="SUPPLY15" gate="G$1" pin="VCC"/>
+<junction x="167.64" y="68.58"/>
 </segment>
 <segment>
 <pinref part="R18" gate="G$1" pin="2"/>
@@ -6741,6 +6742,7 @@ Source: &lt;a href="http://www.ti.com/lit/ds/symlink/tl331-q1.pdf"&gt; Data shee
 <pinref part="R20" gate="G$1" pin="2"/>
 <wire x1="198.12" y1="68.58" x2="193.04" y2="68.58" width="0.1524" layer="91"/>
 <pinref part="SUPPLY16" gate="G$1" pin="VCC"/>
+<junction x="193.04" y="68.58"/>
 </segment>
 <segment>
 <pinref part="X1" gate="-2" pin="S"/>
@@ -6858,6 +6860,7 @@ Source: &lt;a href="http://www.ti.com/lit/ds/symlink/tl331-q1.pdf"&gt; Data shee
 <wire x1="10.16" y1="200.66" x2="10.16" y2="195.58" width="0.1524" layer="91"/>
 <pinref part="C10" gate="G$1" pin="2"/>
 <wire x1="17.78" y1="200.66" x2="10.16" y2="200.66" width="0.1524" layer="91"/>
+<junction x="10.16" y="200.66"/>
 </segment>
 <segment>
 <pinref part="C11" gate="G$1" pin="2"/>
@@ -6881,6 +6884,7 @@ Source: &lt;a href="http://www.ti.com/lit/ds/symlink/tl331-q1.pdf"&gt; Data shee
 <wire x1="172.72" y1="40.64" x2="172.72" y2="43.18" width="0.1524" layer="91"/>
 <wire x1="167.64" y1="40.64" x2="167.64" y2="38.1" width="0.1524" layer="91"/>
 <pinref part="GND23" gate="1" pin="GND"/>
+<junction x="167.64" y="40.64"/>
 </segment>
 <segment>
 <pinref part="T2" gate="1" pin="E"/>
@@ -6891,6 +6895,7 @@ Source: &lt;a href="http://www.ti.com/lit/ds/symlink/tl331-q1.pdf"&gt; Data shee
 <wire x1="187.96" y1="40.64" x2="187.96" y2="43.18" width="0.1524" layer="91"/>
 <wire x1="193.04" y1="40.64" x2="193.04" y2="38.1" width="0.1524" layer="91"/>
 <pinref part="GND24" gate="1" pin="GND"/>
+<junction x="193.04" y="40.64"/>
 </segment>
 <segment>
 <pinref part="X1" gate="-1" pin="S"/>
@@ -7207,6 +7212,7 @@ Source: &lt;a href="http://www.ti.com/lit/ds/symlink/tl331-q1.pdf"&gt; Data shee
 <wire x1="198.12" y1="55.88" x2="198.12" y2="53.34" width="0.1524" layer="91"/>
 <wire x1="198.12" y1="55.88" x2="208.28" y2="55.88" width="0.1524" layer="91"/>
 <label x="200.66" y="55.88" size="1.778" layer="95"/>
+<junction x="198.12" y="55.88"/>
 </segment>
 <segment>
 <pinref part="IC1" gate="G$1" pin="+IN"/>
@@ -7227,6 +7233,7 @@ Source: &lt;a href="http://www.ti.com/lit/ds/symlink/tl331-q1.pdf"&gt; Data shee
 <wire x1="172.72" y1="55.88" x2="172.72" y2="53.34" width="0.1524" layer="91"/>
 <wire x1="172.72" y1="55.88" x2="182.88" y2="55.88" width="0.1524" layer="91"/>
 <label x="175.26" y="55.88" size="1.778" layer="95"/>
+<junction x="172.72" y="55.88"/>
 </segment>
 </net>
 <net name="LN1REF" class="0">
@@ -7236,20 +7243,20 @@ Source: &lt;a href="http://www.ti.com/lit/ds/symlink/tl331-q1.pdf"&gt; Data shee
 <label x="88.9" y="160.02" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="R3" gate="A" pin="3"/>
-<wire x1="7.62" y1="218.44" x2="10.16" y2="218.44" width="0.1524" layer="91"/>
 <pinref part="R6" gate="G$1" pin="2"/>
 <wire x1="10.16" y1="218.44" x2="10.16" y2="210.82" width="0.1524" layer="91"/>
 <pinref part="C10" gate="G$1" pin="1"/>
 <wire x1="17.78" y1="208.28" x2="17.78" y2="210.82" width="0.1524" layer="91"/>
 <wire x1="17.78" y1="210.82" x2="10.16" y2="210.82" width="0.1524" layer="91"/>
-<pinref part="R3" gate="A" pin="2"/>
-<wire x1="7.62" y1="218.44" x2="7.62" y2="226.06" width="0.1524" layer="91"/>
-<wire x1="7.62" y1="226.06" x2="-2.54" y2="226.06" width="0.1524" layer="91"/>
-<junction x="7.62" y="218.44"/>
 <junction x="10.16" y="210.82"/>
 <wire x1="10.16" y1="218.44" x2="27.94" y2="218.44" width="0.1524" layer="91"/>
 <label x="15.24" y="218.44" size="1.778" layer="95"/>
+<pinref part="R3" gate="A" pin="3"/>
+<wire x1="7.62" y1="218.44" x2="10.16" y2="218.44" width="0.1524" layer="91"/>
+<pinref part="R3" gate="A" pin="2"/>
+<wire x1="10.16" y1="226.06" x2="-2.54" y2="226.06" width="0.1524" layer="91"/>
+<wire x1="10.16" y1="218.44" x2="10.16" y2="226.06" width="0.1524" layer="91"/>
+<junction x="10.16" y="218.44"/>
 </segment>
 </net>
 <net name="LN2REF" class="0">
@@ -7314,6 +7321,10 @@ Source: &lt;a href="http://www.ti.com/lit/ds/symlink/tl331-q1.pdf"&gt; Data shee
 </nets>
 </sheet>
 </sheets>
+<errors>
+<approved hash="202,1,-30.48,60.96,J2,4,,,,"/>
+<approved hash="104,1,165.1,144.78,IC1,V+,VCC,,,"/>
+</errors>
 </schematic>
 </drawing>
 </eagle>
