@@ -6558,9 +6558,9 @@ Source: &lt;a href="http://www.ti.com/lit/ds/symlink/tl331-q1.pdf"&gt; Data shee
 <instance part="SUPPLY13" gate="G$1" x="38.1" y="218.44" rot="R90"/>
 <instance part="GND20" gate="1" x="10.16" y="193.04"/>
 <instance part="GND21" gate="1" x="68.58" y="198.12"/>
-<instance part="IC1" gate="G$1" x="165.1" y="137.16"/>
-<instance part="GND22" gate="1" x="165.1" y="121.92"/>
-<instance part="SUPPLY14" gate="G$1" x="165.1" y="152.4"/>
+<instance part="IC1" gate="G$1" x="170.18" y="162.56"/>
+<instance part="GND22" gate="1" x="170.18" y="147.32"/>
+<instance part="SUPPLY14" gate="G$1" x="170.18" y="177.8"/>
 <instance part="R17" gate="G$1" x="162.56" y="63.5" rot="R90"/>
 <instance part="R18" gate="G$1" x="187.96" y="63.5" rot="R90"/>
 <instance part="D3" gate="G$1" x="162.56" y="48.26"/>
@@ -6573,21 +6573,21 @@ Source: &lt;a href="http://www.ti.com/lit/ds/symlink/tl331-q1.pdf"&gt; Data shee
 <instance part="GND24" gate="1" x="193.04" y="35.56"/>
 <instance part="SUPPLY15" gate="G$1" x="167.64" y="71.12"/>
 <instance part="SUPPLY16" gate="G$1" x="193.04" y="71.12"/>
-<instance part="X1" gate="-1" x="142.24" y="109.22" smashed="yes">
-<attribute name="NAME" x="141.732" y="110.109" size="1.778" layer="95" rot="R180"/>
-<attribute name="VALUE" x="129.54" y="112.649" size="1.778" layer="96"/>
+<instance part="X1" gate="-1" x="68.58" y="127" smashed="yes">
+<attribute name="NAME" x="68.072" y="127.889" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="55.88" y="130.429" size="1.778" layer="96"/>
 </instance>
-<instance part="X1" gate="-2" x="142.24" y="106.68"/>
-<instance part="X1" gate="-3" x="142.24" y="104.14"/>
-<instance part="X1" gate="-4" x="142.24" y="101.6"/>
-<instance part="X1" gate="-5" x="142.24" y="99.06"/>
-<instance part="X1" gate="-6" x="142.24" y="96.52"/>
-<instance part="X1" gate="-7" x="142.24" y="93.98"/>
-<instance part="X1" gate="-8" x="142.24" y="91.44"/>
-<instance part="X1" gate="-9" x="142.24" y="88.9"/>
-<instance part="X1" gate="-10" x="142.24" y="86.36"/>
-<instance part="X1" gate="-11" x="142.24" y="83.82"/>
-<instance part="X1" gate="-12" x="142.24" y="81.28"/>
+<instance part="X1" gate="-2" x="68.58" y="124.46"/>
+<instance part="X1" gate="-3" x="68.58" y="121.92"/>
+<instance part="X1" gate="-4" x="68.58" y="119.38"/>
+<instance part="X1" gate="-5" x="68.58" y="116.84"/>
+<instance part="X1" gate="-6" x="68.58" y="114.3"/>
+<instance part="X1" gate="-7" x="68.58" y="111.76"/>
+<instance part="X1" gate="-8" x="68.58" y="109.22"/>
+<instance part="X1" gate="-9" x="68.58" y="106.68"/>
+<instance part="X1" gate="-10" x="68.58" y="104.14"/>
+<instance part="X1" gate="-11" x="68.58" y="101.6"/>
+<instance part="X1" gate="-12" x="68.58" y="99.06"/>
 </instances>
 <busses>
 </busses>
@@ -6723,7 +6723,7 @@ Source: &lt;a href="http://www.ti.com/lit/ds/symlink/tl331-q1.pdf"&gt; Data shee
 </segment>
 <segment>
 <pinref part="IC1" gate="G$1" pin="V+"/>
-<wire x1="165.1" y1="144.78" x2="165.1" y2="152.4" width="0.1524" layer="91"/>
+<wire x1="170.18" y1="170.18" x2="170.18" y2="177.8" width="0.1524" layer="91"/>
 <pinref part="SUPPLY14" gate="G$1" pin="VCC"/>
 </segment>
 <segment>
@@ -6746,13 +6746,13 @@ Source: &lt;a href="http://www.ti.com/lit/ds/symlink/tl331-q1.pdf"&gt; Data shee
 </segment>
 <segment>
 <pinref part="X1" gate="-2" pin="S"/>
-<wire x1="147.32" y1="106.68" x2="162.56" y2="106.68" width="0.1524" layer="91"/>
-<label x="152.4" y="106.68" size="1.778" layer="95"/>
+<wire x1="73.66" y1="124.46" x2="88.9" y2="124.46" width="0.1524" layer="91"/>
+<label x="78.74" y="124.46" size="1.778" layer="95"/>
 </segment>
 <segment>
 <pinref part="X1" gate="-7" pin="S"/>
-<wire x1="147.32" y1="93.98" x2="162.56" y2="93.98" width="0.1524" layer="91"/>
-<label x="152.4" y="93.98" size="1.778" layer="95"/>
+<wire x1="73.66" y1="111.76" x2="88.9" y2="111.76" width="0.1524" layer="91"/>
+<label x="78.74" y="111.76" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="GND" class="0">
@@ -6872,7 +6872,7 @@ Source: &lt;a href="http://www.ti.com/lit/ds/symlink/tl331-q1.pdf"&gt; Data shee
 </segment>
 <segment>
 <pinref part="IC1" gate="G$1" pin="GND"/>
-<wire x1="165.1" y1="129.54" x2="165.1" y2="124.46" width="0.1524" layer="91"/>
+<wire x1="170.18" y1="154.94" x2="170.18" y2="149.86" width="0.1524" layer="91"/>
 <pinref part="GND22" gate="1" pin="GND"/>
 </segment>
 <segment>
@@ -6899,13 +6899,13 @@ Source: &lt;a href="http://www.ti.com/lit/ds/symlink/tl331-q1.pdf"&gt; Data shee
 </segment>
 <segment>
 <pinref part="X1" gate="-1" pin="S"/>
-<wire x1="147.32" y1="109.22" x2="162.56" y2="109.22" width="0.1524" layer="91"/>
-<label x="152.4" y="109.22" size="1.778" layer="95"/>
+<wire x1="73.66" y1="127" x2="88.9" y2="127" width="0.1524" layer="91"/>
+<label x="78.74" y="127" size="1.778" layer="95"/>
 </segment>
 <segment>
 <pinref part="X1" gate="-6" pin="S"/>
-<wire x1="147.32" y1="96.52" x2="162.56" y2="96.52" width="0.1524" layer="91"/>
-<label x="152.4" y="96.52" size="1.778" layer="95"/>
+<wire x1="73.66" y1="114.3" x2="88.9" y2="114.3" width="0.1524" layer="91"/>
+<label x="78.74" y="114.3" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="N$5" class="0">
@@ -6940,8 +6940,8 @@ Source: &lt;a href="http://www.ti.com/lit/ds/symlink/tl331-q1.pdf"&gt; Data shee
 </segment>
 <segment>
 <pinref part="X1" gate="-3" pin="S"/>
-<wire x1="147.32" y1="104.14" x2="162.56" y2="104.14" width="0.1524" layer="91"/>
-<label x="152.4" y="104.14" size="1.778" layer="95"/>
+<wire x1="73.66" y1="121.92" x2="88.9" y2="121.92" width="0.1524" layer="91"/>
+<label x="78.74" y="121.92" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="V02" class="0">
@@ -6952,8 +6952,8 @@ Source: &lt;a href="http://www.ti.com/lit/ds/symlink/tl331-q1.pdf"&gt; Data shee
 </segment>
 <segment>
 <pinref part="X1" gate="-4" pin="S"/>
-<wire x1="147.32" y1="101.6" x2="162.56" y2="101.6" width="0.1524" layer="91"/>
-<label x="152.4" y="101.6" size="1.778" layer="95"/>
+<wire x1="73.66" y1="119.38" x2="88.9" y2="119.38" width="0.1524" layer="91"/>
+<label x="78.74" y="119.38" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="V03" class="0">
@@ -6964,8 +6964,8 @@ Source: &lt;a href="http://www.ti.com/lit/ds/symlink/tl331-q1.pdf"&gt; Data shee
 </segment>
 <segment>
 <pinref part="X1" gate="-5" pin="S"/>
-<wire x1="147.32" y1="99.06" x2="162.56" y2="99.06" width="0.1524" layer="91"/>
-<label x="152.4" y="99.06" size="1.778" layer="95"/>
+<wire x1="73.66" y1="116.84" x2="88.9" y2="116.84" width="0.1524" layer="91"/>
+<label x="78.74" y="116.84" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="RX" class="0">
@@ -7024,8 +7024,8 @@ Source: &lt;a href="http://www.ti.com/lit/ds/symlink/tl331-q1.pdf"&gt; Data shee
 <net name="START" class="0">
 <segment>
 <pinref part="X1" gate="-9" pin="S"/>
-<wire x1="147.32" y1="88.9" x2="162.56" y2="88.9" width="0.1524" layer="91"/>
-<label x="152.4" y="88.9" size="1.778" layer="95"/>
+<wire x1="73.66" y1="106.68" x2="88.9" y2="106.68" width="0.1524" layer="91"/>
+<label x="78.74" y="106.68" size="1.778" layer="95"/>
 </segment>
 <segment>
 <pinref part="U1" gate="G$1" pin="PD1"/>
@@ -7036,8 +7036,8 @@ Source: &lt;a href="http://www.ti.com/lit/ds/symlink/tl331-q1.pdf"&gt; Data shee
 <net name="KILL" class="0">
 <segment>
 <pinref part="X1" gate="-8" pin="S"/>
-<wire x1="147.32" y1="91.44" x2="162.56" y2="91.44" width="0.1524" layer="91"/>
-<label x="152.4" y="91.44" size="1.778" layer="95"/>
+<wire x1="73.66" y1="109.22" x2="88.9" y2="109.22" width="0.1524" layer="91"/>
+<label x="78.74" y="109.22" size="1.778" layer="95"/>
 </segment>
 <segment>
 <pinref part="U1" gate="G$1" pin="PD0"/>
@@ -7181,8 +7181,8 @@ Source: &lt;a href="http://www.ti.com/lit/ds/symlink/tl331-q1.pdf"&gt; Data shee
 <net name="COMP_OUT5" class="0">
 <segment>
 <pinref part="IC1" gate="G$1" pin="OUT"/>
-<wire x1="172.72" y1="137.16" x2="193.04" y2="137.16" width="0.1524" layer="91"/>
-<label x="175.26" y="137.16" size="1.778" layer="95"/>
+<wire x1="177.8" y1="162.56" x2="198.12" y2="162.56" width="0.1524" layer="91"/>
+<label x="180.34" y="162.56" size="1.778" layer="95"/>
 </segment>
 <segment>
 <pinref part="U1" gate="G$1" pin="PD5"/>
@@ -7216,8 +7216,8 @@ Source: &lt;a href="http://www.ti.com/lit/ds/symlink/tl331-q1.pdf"&gt; Data shee
 </segment>
 <segment>
 <pinref part="IC1" gate="G$1" pin="+IN"/>
-<wire x1="157.48" y1="139.7" x2="142.24" y2="139.7" width="0.1524" layer="91"/>
-<label x="144.78" y="139.7" size="1.778" layer="95"/>
+<wire x1="162.56" y1="165.1" x2="147.32" y2="165.1" width="0.1524" layer="91"/>
+<label x="149.86" y="165.1" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="LN1" class="0">
@@ -7262,8 +7262,8 @@ Source: &lt;a href="http://www.ti.com/lit/ds/symlink/tl331-q1.pdf"&gt; Data shee
 <net name="LN2REF" class="0">
 <segment>
 <pinref part="IC1" gate="G$1" pin="-IN"/>
-<wire x1="157.48" y1="134.62" x2="142.24" y2="134.62" width="0.1524" layer="91"/>
-<label x="144.78" y="134.62" size="1.778" layer="95"/>
+<wire x1="162.56" y1="160.02" x2="147.32" y2="160.02" width="0.1524" layer="91"/>
+<label x="149.86" y="160.02" size="1.778" layer="95"/>
 </segment>
 <segment>
 <pinref part="R15" gate="A" pin="3"/>
@@ -7285,8 +7285,8 @@ Source: &lt;a href="http://www.ti.com/lit/ds/symlink/tl331-q1.pdf"&gt; Data shee
 <net name="START_BTN" class="0">
 <segment>
 <pinref part="X1" gate="-10" pin="S"/>
-<wire x1="147.32" y1="86.36" x2="167.64" y2="86.36" width="0.1524" layer="91"/>
-<label x="152.4" y="86.36" size="1.778" layer="95"/>
+<wire x1="73.66" y1="104.14" x2="93.98" y2="104.14" width="0.1524" layer="91"/>
+<label x="78.74" y="104.14" size="1.778" layer="95"/>
 </segment>
 <segment>
 <pinref part="U1" gate="G$1" pin="PB0"/>
@@ -7297,8 +7297,8 @@ Source: &lt;a href="http://www.ti.com/lit/ds/symlink/tl331-q1.pdf"&gt; Data shee
 <net name="RESET" class="0">
 <segment>
 <pinref part="X1" gate="-11" pin="S"/>
-<wire x1="147.32" y1="83.82" x2="162.56" y2="83.82" width="0.1524" layer="91"/>
-<label x="152.4" y="83.82" size="1.778" layer="95"/>
+<wire x1="73.66" y1="101.6" x2="88.9" y2="101.6" width="0.1524" layer="91"/>
+<label x="78.74" y="101.6" size="1.778" layer="95"/>
 </segment>
 <segment>
 <pinref part="U1" gate="G$1" pin="RESET/PC1"/>
@@ -7309,8 +7309,8 @@ Source: &lt;a href="http://www.ti.com/lit/ds/symlink/tl331-q1.pdf"&gt; Data shee
 <net name="HWB" class="0">
 <segment>
 <pinref part="X1" gate="-12" pin="S"/>
-<wire x1="147.32" y1="81.28" x2="162.56" y2="81.28" width="0.1524" layer="91"/>
-<label x="152.4" y="81.28" size="1.778" layer="95"/>
+<wire x1="73.66" y1="99.06" x2="88.9" y2="99.06" width="0.1524" layer="91"/>
+<label x="78.74" y="99.06" size="1.778" layer="95"/>
 </segment>
 <segment>
 <pinref part="U1" gate="G$1" pin="PD7(CTS)"/>
