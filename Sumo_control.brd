@@ -1300,11 +1300,11 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <description>&lt;b&gt;Single Pads&lt;/b&gt;&lt;p&gt;
 &lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;</description>
 <packages>
-<package name="SMD1,27-2,54">
+<package name="SMD2,54-5,08">
 <description>&lt;b&gt;SMD PAD&lt;/b&gt;</description>
-<smd name="1" x="0" y="0" dx="1.27" dy="2.54" layer="1"/>
+<smd name="1" x="0" y="0" dx="2.54" dy="5.08" layer="1"/>
 <text x="0" y="0" size="0.0254" layer="27">&gt;VALUE</text>
-<text x="-0.8" y="-2.4" size="1.27" layer="25" rot="R90">&gt;NAME</text>
+<text x="-1.5" y="-2.5" size="1.27" layer="25" rot="R90">&gt;NAME</text>
 </package>
 </packages>
 </library>
@@ -1622,8 +1622,8 @@ design rules under a new name.</description>
 </element>
 <element name="D1" library="SparkFun-LED" package="LED-0603" value="PWR_LED" x="41.78" y="10.43" rot="R180"/>
 <element name="R4" library="resistor" package="R0603" value="1k" x="41.91" y="13.59" rot="R90"/>
-<element name="GND_PAD" library="wirepad" package="SMD1,27-2,54" value="" x="39.1" y="2.5" rot="MR0"/>
-<element name="V_PAD" library="wirepad" package="SMD1,27-2,54" value="" x="41.7" y="2.6" rot="MR0"/>
+<element name="GND_PAD" library="wirepad" package="SMD2,54-5,08" value="WIREPADSMD2,54-5,08" x="37.9" y="3.1" rot="MR0"/>
+<element name="V_PAD" library="wirepad" package="SMD2,54-5,08" value="WIREPADSMD2,54-5,08" x="41.5" y="3.1" rot="MR0"/>
 </elements>
 <signals>
 <signal name="VCC">
@@ -1705,11 +1705,11 @@ design rules under a new name.</description>
 <via x="49.4" y="19.1" extent="1-16" drill="0.3"/>
 <via x="52.3" y="9.2" extent="1-16" drill="0.3"/>
 <via x="54.2" y="3.2" extent="1-16" drill="0.3"/>
-<via x="21.4" y="10.5" extent="1-16" drill="0.3"/>
+<via x="20.3" y="7.5" extent="1-16" drill="0.3"/>
 <via x="2.4" y="19.7" extent="1-16" drill="0.3"/>
-<via x="21.8" y="20.4" extent="1-16" drill="0.3"/>
-<via x="38.8" y="20" extent="1-16" drill="0.3"/>
-<via x="38.4" y="8.9" extent="1-16" drill="0.3"/>
+<via x="20.8" y="20.6" extent="1-16" drill="0.3"/>
+<via x="39.3" y="20.4" extent="1-16" drill="0.3"/>
+<via x="33.3" y="5.2" extent="1-16" drill="0.3"/>
 <via x="57.9" y="19.8" extent="1-16" drill="0.3"/>
 <via x="37.4" y="2.1" extent="1-16" drill="0.3"/>
 </signal>
@@ -1717,15 +1717,13 @@ design rules under a new name.</description>
 <contactref element="R2" pad="1"/>
 <contactref element="HWB" pad="2"/>
 <contactref element="X1" pad="7"/>
-<wire x1="21.165" y1="2.52" x2="35.92" y2="2.52" width="0.3" layer="16"/>
-<wire x1="35.92" y1="2.52" x2="41.8" y2="8.4" width="0.3" layer="16"/>
-<wire x1="41.8" y1="8.4" x2="41.8" y2="12" width="0.3" layer="16"/>
-<wire x1="41.8" y1="12" x2="44.2" y2="14.4" width="0.3" layer="16"/>
 <via x="44.2" y="14.4" extent="1-16" drill="0.3"/>
 <wire x1="44.2" y1="14.4" x2="45.75" y2="14.4" width="0.3" layer="1"/>
 <wire x1="45.75" y1="14.4" x2="45.88" y2="14.27" width="0.3" layer="1"/>
 <wire x1="48.8" y1="16.39" x2="48" y2="16.39" width="0.5" layer="1"/>
 <wire x1="48" y1="16.39" x2="45.88" y2="14.27" width="0.5" layer="1"/>
+<wire x1="44.2" y1="14.4" x2="32.32" y2="2.52" width="0.3" layer="16"/>
+<wire x1="32.32" y1="2.52" x2="21.165" y2="2.52" width="0.3" layer="16"/>
 </signal>
 <signal name="START_BTN">
 <contactref element="R3" pad="1"/>
@@ -1742,7 +1740,7 @@ design rules under a new name.</description>
 <signal name="V_IN">
 <contactref element="V_REG" pad="1"/>
 <contactref element="V_PAD" pad="1"/>
-<wire x1="41.7" y1="2.6" x2="43.3" y2="4.2" width="0.5" layer="16"/>
+<wire x1="41.5" y1="3.1" x2="43.3" y2="4.2" width="0.5" layer="16"/>
 <wire x1="43.3" y1="4.2" x2="43.3" y2="9.6" width="0.5" layer="16"/>
 <wire x1="43.3" y1="9.6" x2="44.84" y2="11.14" width="0.5" layer="16"/>
 <wire x1="44.84" y1="11.14" x2="45.92" y2="11.14" width="0.5" layer="16"/>
