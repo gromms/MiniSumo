@@ -1,2 +1,7 @@
 # MiniSumo
-Mini Sumo electronics
+Repository of mini sumo robot's electronics and programs of "Robotics Project" course.
+
+# Team members
+* Gromet Spaal
+* Martin Maidla
+* Simmo Saan
