@@ -5443,6 +5443,11 @@ Standard schematic elements and footprints for 5mm, 3mm, 1206, and 0603 sized LE
 </nets>
 </sheet>
 </sheets>
+<errors>
+<approved hash="101,1,55.88,-50.8,X1-8,S,,,,"/>
+<approved hash="113,1,22.1827,-7.42527,V_REG,,,,,"/>
+<approved hash="113,1,73.8183,-7.42527,START_MODULE,,,,,"/>
+</errors>
 </schematic>
 </drawing>
 </eagle>
