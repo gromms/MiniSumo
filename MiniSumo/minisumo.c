@@ -1,7 +1,5 @@
-#define F_CPU 16000000UL
 #include <avr/io.h>
-#define __DELAY_BACKWARD_COMPATIBLE__ // http://lists.gnu.org/archive/html/avr-gcc-list/2012-05/msg00030.html
-#include <util/delay.h>
+#include "delay.h"
 #include <avr/interrupt.h>
 
 #include <stdio.h>
@@ -12,32 +10,25 @@
 #include "comms.h"
 #include "util.h"
 
-char response[16];
-
 int main(void)
 {
 	// clock prescaler
 	CLKPR = BIT(CLKPCE); // enable prescaler change
 	CLKPR = BITS(0b0000, CLKPS0); // divider 1
 
-	// disable JTAG - control F port
-	//MCUCR = BIT(JTD);
-	//MCUCR = BIT(JTD);
-
-	// button inputs
+	// BTN inputs
 	bit_clear(DDRB, BIT(START_BTN));
 
-	// COMP inputs
-	bit_set(PORTB, BIT(DISTL) | BIT(DISTM) | BIT(DISTR) | BIT(LIGHTL) | BIT(LIGHTR));
-	bit_clear(DDRB, BIT(DISTL) | BIT(DISTM) | BIT(DISTR) | BIT(LIGHTL) | BIT(LIGHTR));
+	// DIST inputs
+	bit_clear(DDRB, DISTS);
+	bit_set(PORTB, DISTS); // pull-ups
+
+	// LIGHT inputs
+	bit_clear(DDRD, BIT(LIGHTL));
+	bit_clear(DDRB, BIT(LIGHTR));
 
 	// initialize comms
-	//usb_init();
 	usart_init();
-
-	// wait for USB configuration
-	// while (!usb_configured());
-	_delay_ms(1000);
 
 	sei(); // enable interrupts
 

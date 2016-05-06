@@ -2,13 +2,11 @@
 #include <avr/interrupt.h>
 #include <stdio.h>
 #include "pins.h"
-#include "eeprom.h"
 #include "util.h"
 
 volatile unsigned char usart_buf[16];
 volatile uint8_t usart_i = 0;
 volatile bool usart_data_ready = false;
-char reply[16];
 
 bool iseol(char ch)
 {
