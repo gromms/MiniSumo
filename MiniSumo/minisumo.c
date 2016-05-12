@@ -36,8 +36,12 @@ int main(void)
 	{
 		/*usart_write("1:s0.3\n");
 		usart_write("2:s-0.3\n");*/
-		bool b = bit_get(PINB, BIT(DISTL));
-		usart_write(b ? "1\n" : "0\n");
+		//bool b = bit_get(PINB, BIT(DISTR));
+		//usart_write(b ? "1\n" : "0n");
+
+		usart_write(bit_get(PINB, BIT(DISTL)) ? "1" : "0");
+		usart_write(bit_get(PINB, BIT(DISTM)) ? "1" : "0");
+		usart_write(bit_get(PINB, BIT(DISTR)) ? "1" : "0");
 
 		_delay_ms(100);
 	}
