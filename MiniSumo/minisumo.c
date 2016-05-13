@@ -34,14 +34,30 @@ int main(void)
 
 	while (1)
 	{
-		/*usart_write("1:s0.3\n");
-		usart_write("2:s-0.3\n");*/
-		//bool b = bit_get(PINB, BIT(DISTR));
-		//usart_write(b ? "1\n" : "0n");
+		bool distl = bit_get(PINB, BIT(DISTR));
+		bool distm = bit_get(PINB, BIT(DISTM));
+		bool distr = bit_get(PINB, BIT(DISTL));
 
-		usart_write(bit_get(PINB, BIT(DISTL)) ? "1" : "0");
-		usart_write(bit_get(PINB, BIT(DISTM)) ? "1" : "0");
-		usart_write(bit_get(PINB, BIT(DISTR)) ? "1" : "0");
+		if (distl && !distr)
+		{
+			usart_write("1:s0.5\n");
+			usart_write("2:s-0.8\n");
+		}
+		else if (!distl && distr)
+		{
+			usart_write("1:s0.8\n");
+			usart_write("2:s-0.5\n");
+		}
+		else if (distm)
+		{
+			usart_write("1:s1.2\n");
+			usart_write("2:s-1.2\n");
+		}
+		else
+		{
+			usart_write("1:s0\n");
+			usart_write("2:s0\n");
+		}
 
 		_delay_ms(100);
 	}
