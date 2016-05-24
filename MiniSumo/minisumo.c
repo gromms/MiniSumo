@@ -70,8 +70,8 @@ int main(void)
 		else
 			usart_write("xxx\n");*/
 
-		usart_write(lightl ? "a" : "x");
-		usart_write(lightr ? "a" : "x");
+		usart_write(lightl ? "1:s0.3\n" : "1:s0\n");
+		usart_write(lightr ? "2:s0.3\n" : "2:s0\n");
 
 		_delay_ms(100);
 	}
