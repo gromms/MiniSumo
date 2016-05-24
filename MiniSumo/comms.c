@@ -40,7 +40,7 @@ void usart_write(unsigned char* data)
 		UDR1 = *data;
 		data++;
 	}
-	_delay_ms(5);
+	_delay_ms(1);
 }
 
 ISR(USART1_RX_vect)

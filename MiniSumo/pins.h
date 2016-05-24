@@ -22,7 +22,7 @@
 #define DISTS (BIT(DISTL) | BIT(DISTM) | BIT(DISTR))
 
 // LIGHT inputs
-#define LIGHTL PD5
-#define LIGHTR PB4
+#define LIGHTL PB4
+#define LIGHTR PD5
 
 #endif

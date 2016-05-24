@@ -24,8 +24,10 @@ int main(void)
 	bit_set(PORTB, DISTS); // pull-ups
 
 	// LIGHT inputs
-	bit_clear(DDRD, BIT(LIGHTL));
-	bit_clear(DDRB, BIT(LIGHTR));
+	bit_clear(DDRB, BIT(LIGHTL));
+	bit_set(PORTB, BIT(LIGHTL));
+	bit_clear(DDRD, BIT(LIGHTR));
+	bit_set(PORTD, BIT(LIGHTR));
 
 	// initialize comms
 	usart_init();
@@ -37,8 +39,10 @@ int main(void)
 		bool distl = bit_get(PINB, BIT(DISTR));
 		bool distm = bit_get(PINB, BIT(DISTM));
 		bool distr = bit_get(PINB, BIT(DISTL));
+		bool lightl = bit_get(PINB, BIT(LIGHTL));
+		bool lightr = !bit_get(PIND, BIT(LIGHTR));
 
-		if (distl && !distr)
+		/*if (distl && !distr)
 		{
 			usart_write("1:s0.5\n");
 			usart_write("2:s-0.8\n");
@@ -57,7 +61,17 @@ int main(void)
 		{
 			usart_write("1:s0\n");
 			usart_write("2:s0\n");
-		}
+		}*/
+
+		/*if (lightl)
+			usart_write("aaa\n");
+		else if (lightr)
+			usart_write("ggg\n");
+		else
+			usart_write("xxx\n");*/
+
+		usart_write(lightl ? "a" : "x");
+		usart_write(lightr ? "a" : "x");
 
 		_delay_ms(100);
 	}
