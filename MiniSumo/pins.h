@@ -25,4 +25,7 @@
 #define LIGHTL PB4
 #define LIGHTR PD5
 
+// LED
+#define LED PD6
+
 #endif

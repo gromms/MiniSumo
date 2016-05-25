@@ -10,6 +10,17 @@
 #include "comms.h"
 #include "util.h"
 
+volatile int show = 0;
+
+ISR(PCINT0_vect)
+{
+	if (bit_get(PINB, BIT(START_BTN)) == 0)
+	{
+		show++;
+		show %= 5;
+	}
+}
+
 int main(void)
 {
 	// clock prescaler
@@ -18,6 +29,8 @@ int main(void)
 
 	// BTN inputs
 	bit_clear(DDRB, BIT(START_BTN));
+	bit_set(PCICR, BIT(PCIE0));
+	bit_set(PCMSK0, BIT(PCINT0));
 
 	// DIST inputs
 	bit_clear(DDRB, DISTS);
@@ -28,6 +41,9 @@ int main(void)
 	bit_set(PORTB, BIT(LIGHTL));
 	bit_clear(DDRD, BIT(LIGHTR));
 	bit_set(PORTD, BIT(LIGHTR));
+
+	// LED
+	bit_set(DDRD, BIT(LED));
 
 	// initialize comms
 	usart_init();
@@ -41,6 +57,28 @@ int main(void)
 		bool distr = bit_get(PINB, BIT(DISTL));
 		bool lightl = bit_get(PINB, BIT(LIGHTL));
 		bool lightr = !bit_get(PIND, BIT(LIGHTR));
+
+		bool s;
+		switch (show)
+		{
+		case 0:
+			s = lightr;
+			break;
+		case 1:
+			s = lightl;
+			break;
+		case 2:
+			s = distr;
+			break;
+		case 3:
+			s = distm;
+			break;
+		case 4:
+			s = distl;
+			break;
+		}
+
+		bit_write(s, PORTD, BIT(LED));
 
 		/*if (distl && !distr)
 		{
