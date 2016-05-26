@@ -41,8 +41,6 @@ int main(void)
 
 	sei(); // enable interrupts
 
-	bool oldbtn = false;
-
 	while (1)
 	{
 		bool distl = bit_get(PINB, BIT(DISTR));
@@ -51,37 +49,6 @@ int main(void)
 		bool lightl = bit_get(PINB, BIT(LIGHTL));
 		bool lightr = !bit_get(PIND, BIT(LIGHTR));
 		bool btn = !bit_get(PINB, BIT(START_BTN));
-
-		if (!oldbtn && btn)
-		{
-			_delay_ms(100);
-			show++;
-			show %= 5;
-		}
-
-		oldbtn = btn;
-
-		bool s;
-		switch (show)
-		{
-		case 0:
-			s = lightr;
-			break;
-		case 1:
-			s = lightl;
-			break;
-		case 2:
-			s = distr;
-			break;
-		case 3:
-			s = distm;
-			break;
-		case 4:
-			s = distl;
-			break;
-		}
-
-		bit_write(s, PORTD, BIT(LED));
 
 		/*if (distl && !distr)
 		{
