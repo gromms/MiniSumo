@@ -46,8 +46,8 @@ int main(void)
 		bool distl = bit_get(PINB, BIT(DISTR));
 		bool distm = bit_get(PINB, BIT(DISTM));
 		bool distr = bit_get(PINB, BIT(DISTL));
-		bool lightl = bit_get(PINB, BIT(LIGHTL));
-		bool lightr = !bit_get(PIND, BIT(LIGHTR));
+		bool lightl = !bit_get(PINB, BIT(LIGHTL));
+		bool lightr = bit_get(PIND, BIT(LIGHTR));
 		bool btn = !bit_get(PINB, BIT(START_BTN));
 
 		/*if (distl && !distr)
