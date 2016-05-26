@@ -12,15 +12,6 @@
 
 volatile int show = 0;
 
-ISR(PCINT0_vect)
-{
-	if (bit_get(PINB, BIT(START_BTN)) == 0)
-	{
-		show++;
-		show %= 5;
-	}
-}
-
 int main(void)
 {
 	// clock prescaler
@@ -50,6 +41,8 @@ int main(void)
 
 	sei(); // enable interrupts
 
+	bool oldbtn = false;
+
 	while (1)
 	{
 		bool distl = bit_get(PINB, BIT(DISTR));
@@ -57,6 +50,16 @@ int main(void)
 		bool distr = bit_get(PINB, BIT(DISTL));
 		bool lightl = bit_get(PINB, BIT(LIGHTL));
 		bool lightr = !bit_get(PIND, BIT(LIGHTR));
+		bool btn = !bit_get(PINB, BIT(START_BTN));
+
+		if (!oldbtn && btn)
+		{
+			_delay_ms(100);
+			show++;
+			show %= 5;
+		}
+
+		oldbtn = btn;
 
 		bool s;
 		switch (show)
