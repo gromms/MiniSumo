@@ -52,33 +52,34 @@ int main(void)
 
 		if (lightl || lightr)
 		{
-			usart_write(lightl ? "1:s0.1\n" : "1:s0\n");
-			usart_write(lightr ? "2:s0.1\n" : "2:s0\n");
+			usart_write(lightl ? "1:s0.4\n" : "1:s0\n");
+			usart_write(lightr ? "2:s0.4\n" : "2:s0\n");
 		}
 		else
 		{
 			if (distl && !distr)
 			{
-				usart_write("1:s-0.1\n");
-				usart_write("2:s0\n");
+				usart_write("1:s-0.5\n");
+				usart_write("2:s-0.65\n");
 			}
 			else if (!distl && distr)
 			{
-				usart_write("1:s-0.1\n");
-				usart_write("2:s0\n");
+				usart_write("1:s-0.65\n");
+				usart_write("2:s-0.5\n");
 			}
 			else if (distm)
 			{
-				usart_write("1:s-0.1\n");
-				usart_write("2:s-0.1\n");
+				usart_write("1:s-0.65\n");
+				usart_write("2:s-0.65\n");
 			}
 			else
 			{
-				usart_write("1:s0.1\n");
-				usart_write("2:s-0.1\n");
+				usart_write("1:s0.25\n");
+				//usart_write("2:s-0.2\n");
+				usart_write("2:s0\n");
 			}
 		}
 
-		_delay_ms(10);
+		_delay_ms(50);
 	}
 }
