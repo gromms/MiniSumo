@@ -1,7 +1,5 @@
-#define F_CPU 16000000UL
 #include <avr/io.h>
-#define __DELAY_BACKWARD_COMPATIBLE__ // http://lists.gnu.org/archive/html/avr-gcc-list/2012-05/msg00030.html
-#include <util/delay.h>
+#include "delay.h"
 #include <avr/interrupt.h>
 
 #include <stdio.h>
@@ -12,7 +10,7 @@
 #include "comms.h"
 #include "util.h"
 
-char response[16];
+volatile int show = 0;
 
 int main(void)
 {
@@ -20,33 +18,101 @@ int main(void)
 	CLKPR = BIT(CLKPCE); // enable prescaler change
 	CLKPR = BITS(0b0000, CLKPS0); // divider 1
 
-	// disable JTAG - control F port
-	//MCUCR = BIT(JTD);
-	//MCUCR = BIT(JTD);
-
-	// button inputs
+	// BTN inputs
 	bit_clear(DDRB, BIT(START_BTN));
+	bit_set(PCICR, BIT(PCIE0));
+	bit_set(PCMSK0, BIT(PCINT0));
 
-	// COMP inputs
-	bit_set(PORTB, BIT(DISTL) | BIT(DISTM) | BIT(DISTR) | BIT(LIGHTL) | BIT(LIGHTR));
-	bit_clear(DDRB, BIT(DISTL) | BIT(DISTM) | BIT(DISTR) | BIT(LIGHTL) | BIT(LIGHTR));
+	// DIST inputs
+	bit_clear(DDRB, DISTS);
+	bit_set(PORTB, DISTS); // pull-ups
+
+	// LIGHT inputs
+	bit_clear(DDRB, BIT(LIGHTL));
+	bit_set(PORTB, BIT(LIGHTL));
+	bit_clear(DDRD, BIT(LIGHTR));
+	bit_set(PORTD, BIT(LIGHTR));
+
+	// LED
+	bit_set(DDRD, BIT(LED));
 
 	// initialize comms
-	//usb_init();
 	usart_init();
-
-	// wait for USB configuration
-	// while (!usb_configured());
-	_delay_ms(1000);
 
 	sei(); // enable interrupts
 
+	bool oldbtn = false;
+
 	while (1)
 	{
-		/*usart_write("1:s0.3\n");
-		usart_write("2:s-0.3\n");*/
-		bool b = bit_get(PINB, BIT(DISTL));
-		usart_write(b ? "1\n" : "0\n");
+		bool distl = bit_get(PINB, BIT(DISTR));
+		bool distm = bit_get(PINB, BIT(DISTM));
+		bool distr = bit_get(PINB, BIT(DISTL));
+		bool lightl = bit_get(PINB, BIT(LIGHTL));
+		bool lightr = !bit_get(PIND, BIT(LIGHTR));
+		bool btn = !bit_get(PINB, BIT(START_BTN));
+
+		if (!oldbtn && btn)
+		{
+			_delay_ms(100);
+			show++;
+			show %= 5;
+		}
+
+		oldbtn = btn;
+
+		bool s;
+		switch (show)
+		{
+		case 0:
+			s = lightr;
+			break;
+		case 1:
+			s = lightl;
+			break;
+		case 2:
+			s = distr;
+			break;
+		case 3:
+			s = distm;
+			break;
+		case 4:
+			s = distl;
+			break;
+		}
+
+		bit_write(s, PORTD, BIT(LED));
+
+		/*if (distl && !distr)
+		{
+			usart_write("1:s0.5\n");
+			usart_write("2:s-0.8\n");
+		}
+		else if (!distl && distr)
+		{
+			usart_write("1:s0.8\n");
+			usart_write("2:s-0.5\n");
+		}
+		else if (distm)
+		{
+			usart_write("1:s1.2\n");
+			usart_write("2:s-1.2\n");
+		}
+		else
+		{
+			usart_write("1:s0\n");
+			usart_write("2:s0\n");
+		}*/
+
+		/*if (lightl)
+			usart_write("aaa\n");
+		else if (lightr)
+			usart_write("ggg\n");
+		else
+			usart_write("xxx\n");*/
+
+		usart_write(lightl ? "1:s0.3\n" : "1:s0\n");
+		usart_write(lightr ? "2:s0.3\n" : "2:s0\n");
 
 		_delay_ms(100);
 	}
