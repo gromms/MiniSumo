@@ -17,8 +17,8 @@
 
 // DIST inputs
 #define DISTL PB5
-#define DISTM PB6
-#define DISTR PB7
+#define DISTM PB7
+#define DISTR PB6
 #define DISTS (BIT(DISTL) | BIT(DISTM) | BIT(DISTR))
 
 // LIGHT inputs

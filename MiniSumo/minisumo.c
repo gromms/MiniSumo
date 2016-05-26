@@ -43,9 +43,9 @@ int main(void)
 
 	while (1)
 	{
-		bool distl = bit_get(PINB, BIT(DISTR));
+		bool distl = !bit_get(PINB, BIT(DISTR));
 		bool distm = bit_get(PINB, BIT(DISTM));
-		bool distr = bit_get(PINB, BIT(DISTL));
+		bool distr = !bit_get(PINB, BIT(DISTL));
 		bool lightl = !bit_get(PINB, BIT(LIGHTL));
 		bool lightr = bit_get(PIND, BIT(LIGHTR));
 		bool btn = !bit_get(PINB, BIT(START_BTN));
@@ -57,19 +57,19 @@ int main(void)
 		}
 		else
 		{
-			if (distl && !distr)
+			/*if (distl && !distr)
 			{
 				usart_write("1:s-0.1\n");
-				usart_write("2:s-0.1\n");
+				usart_write("2:s0\n");
 			}
 			else if (!distl && distr)
 			{
 				usart_write("1:s-0.1\n");
 				usart_write("2:s0\n");
 			}
-			else if (distm)
+			else*/ if (distm)
 			{
-				usart_write("1:s0\n");
+				usart_write("1:s-0.1\n");
 				usart_write("2:s-0.1\n");
 			}
 			else
