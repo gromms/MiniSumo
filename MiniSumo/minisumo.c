@@ -74,9 +74,8 @@ int main(void)
 			}
 			else
 			{
-				usart_write("1:s0.25\n");
-				//usart_write("2:s-0.2\n");
-				usart_write("2:s0\n");
+				usart_write("1:s0\n");
+				usart_write("2:s-0.25\n");
 			}
 		}
 
