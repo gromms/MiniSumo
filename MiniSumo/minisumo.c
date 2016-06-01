@@ -10,6 +10,14 @@
 #include "comms.h"
 #include "util.h"
 
+void drive(int left, int right)
+{
+	char buf[24];
+	sprintf(buf, "1:%s0.%.3d\n" "2:%s0.%.3d\n",
+		left < 0 ? "-" : "", abs(left),
+		right < 0 ? "-" : "", abs(right));
+	usart_write(buf);
+}
 
 int main(void)
 {
@@ -51,30 +59,27 @@ int main(void)
 
 		if (lightl || lightr)
 		{
-			usart_write(lightl ? "1:s0.3\n" : "1:s0\n");
-			usart_write(lightr ? "2:s0.3\n" : "2:s0\n");
+			drive(
+				lightl ? 300 : 0,
+				lightr ? 300 : 0);
 		}
 		else
 		{
 			if (distl && !distr)
 			{
-				usart_write("1:s-0.4\n");
-				usart_write("2:s-0.5\n");
+				drive(-400, -500);
 			}
 			else if (!distl && distr)
 			{
-				usart_write("1:s-0.5\n");
-				usart_write("2:s-0.4\n");
+				drive(-500, -400);
 			}
 			else if (distm)
 			{
-				usart_write("1:s-0.5\n");
-				usart_write("2:s-0.5\n");
+				drive(-500, -500);
 			}
 			else
 			{
-				usart_write("1:s0\n");
-				usart_write("2:s-0.2\n");
+				drive(0, -200);
 			}
 		}
 
