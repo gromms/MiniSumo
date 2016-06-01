@@ -14,8 +14,8 @@ void drive(int left, int right)
 {
 	char buf[24];
 	sprintf(buf, "1:%s0.%.3d\n" "2:%s0.%.3d\n",
-		left < 0 ? "-" : "", abs(left),
-		right < 0 ? "-" : "", abs(right));
+		-left < 0 ? "-" : "", abs(left),
+		-right < 0 ? "-" : "", abs(right));
 	usart_write(buf);
 }
 
@@ -60,26 +60,26 @@ int main(void)
 		if (lightl || lightr)
 		{
 			drive(
-				lightl ? 300 : 0,
-				lightr ? 300 : 0);
+				lightl ? -300 : 0,
+				lightr ? -300 : 0);
 		}
 		else
 		{
 			if (distl && !distr)
 			{
-				drive(-400, -500);
+				drive(400, 500);
 			}
 			else if (!distl && distr)
 			{
-				drive(-500, -400);
+				drive(500, 400);
 			}
 			else if (distm)
 			{
-				drive(-500, -500);
+				drive(500, 500);
 			}
 			else
 			{
-				drive(0, -200);
+				drive(0, 200);
 			}
 		}
 
