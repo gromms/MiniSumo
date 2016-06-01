@@ -10,7 +10,6 @@
 #include "comms.h"
 #include "util.h"
 
-volatile int show = 0;
 
 int main(void)
 {
