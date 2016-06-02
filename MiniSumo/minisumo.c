@@ -60,29 +60,32 @@ int main(void)
 		if (lightl || lightr)
 		{
 			drive(
-				lightl ? -300 : 0,
-				lightr ? -300 : 0);
+				lightl ? -250 : -200,
+				lightr ? -250 : -200);
+			_delay_ms(100);
 		}
 		else
 		{
 			if (distl && !distr)
 			{
-				drive(400, 500);
+				drive(200, 300);
+				_delay_ms(150);
 			}
 			else if (!distl && distr)
 			{
-				drive(500, 400);
+				drive(300, 200);
+				_delay_ms(150);
 			}
 			else if (distm)
 			{
-				drive(500, 500);
+				drive(300, 300);
+				_delay_ms(150);
 			}
 			else
 			{
 				drive(0, 200);
+				_delay_ms(10);
 			}
 		}
-
-		_delay_ms(50);
 	}
 }
