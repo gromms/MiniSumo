@@ -10,7 +10,16 @@
 #include "comms.h"
 #include "util.h"
 
-volatile int show = 0;
+void drive(int left, int right)
+{
+	char buf[16];
+
+	sprintf(buf, "1:s%s0.%.3d\n", -left < 0 ? "-" : "", abs(left));
+	usart_write(buf);
+
+	sprintf(buf, "2:s%s0.%.3d\n", -right < 0 ? "-" : "", abs(right));
+	usart_write(buf);
+}
 
 int main(void)
 {
@@ -41,6 +50,8 @@ int main(void)
 
 	sei(); // enable interrupts
 
+	drive(0, 0);
+
 	while (1)
 	{
 		bool distl = !bit_get(PINB, BIT(DISTL));
@@ -52,34 +63,33 @@ int main(void)
 
 		if (lightl || lightr)
 		{
-			usart_write(lightl ? "1:s0.4\n" : "1:s0\n");
-			usart_write(lightr ? "2:s0.4\n" : "2:s0\n");
+			drive(
+				lightl ? -250 : -200,
+				lightr ? -250 : -200);
+			_delay_ms(200);
 		}
 		else
 		{
 			if (distl && !distr)
 			{
-				usart_write("1:s-0.5\n");
-				usart_write("2:s-0.65\n");
+				drive(distm ? 250 : 200, 300);
+				_delay_ms(150);
 			}
 			else if (!distl && distr)
 			{
-				usart_write("1:s-0.65\n");
-				usart_write("2:s-0.5\n");
+				drive(300, distm ? 250 : 200);
+				_delay_ms(150);
 			}
 			else if (distm)
 			{
-				usart_write("1:s-0.65\n");
-				usart_write("2:s-0.65\n");
+				drive(300, 300);
+				_delay_ms(150);
 			}
 			else
 			{
-				usart_write("1:s0.25\n");
-				//usart_write("2:s-0.2\n");
-				usart_write("2:s0\n");
+				drive(0, 150);
+				_delay_ms(5);
 			}
 		}
-
-		_delay_ms(50);
 	}
 }
