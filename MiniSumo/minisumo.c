@@ -50,6 +50,8 @@ int main(void)
 
 	sei(); // enable interrupts
 
+	drive(0, 0);
+
 	while (1)
 	{
 		bool distl = !bit_get(PINB, BIT(DISTL));
@@ -64,18 +66,18 @@ int main(void)
 			drive(
 				lightl ? -250 : -200,
 				lightr ? -250 : -200);
-			_delay_ms(100);
+			_delay_ms(200);
 		}
 		else
 		{
 			if (distl && !distr)
 			{
-				drive(200, 300);
+				drive(distm ? 250 : 200, 300);
 				_delay_ms(150);
 			}
 			else if (!distl && distr)
 			{
-				drive(300, 200);
+				drive(300, distm ? 250 : 200);
 				_delay_ms(150);
 			}
 			else if (distm)
@@ -85,8 +87,8 @@ int main(void)
 			}
 			else
 			{
-				drive(0, 200);
-				_delay_ms(10);
+				drive(0, 150);
+				_delay_ms(5);
 			}
 		}
 	}
