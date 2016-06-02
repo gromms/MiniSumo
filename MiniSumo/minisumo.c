@@ -12,10 +12,12 @@
 
 void drive(int left, int right)
 {
-	char buf[24];
-	sprintf(buf, "1:s%s0.%.3d\n" "2:s%s0.%.3d\n",
-		-left < 0 ? "-" : "", abs(left),
-		-right < 0 ? "-" : "", abs(right));
+	char buf[16];
+
+	sprintf(buf, "1:s%s0.%.3d\n", -left < 0 ? "-" : "", abs(left));
+	usart_write(buf);
+
+	sprintf(buf, "2:s%s0.%.3d\n", -right < 0 ? "-" : "", abs(right));
 	usart_write(buf);
 }
 
